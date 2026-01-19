@@ -4,6 +4,7 @@ import helmet from 'helmet'
 import dotenv from 'dotenv'
 import { CronService } from './services/monitoring/cron'
 import monitorRoutes from './routes/monitor'
+import statusRoutes from './routes/status'
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ app.use(express.json())
 
 // Routes
 app.use('/api/monitor', monitorRoutes)
+app.use('/api/status', statusRoutes)
 
 // Health check
 app.get('/health', (req, res) => {

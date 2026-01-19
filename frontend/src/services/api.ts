@@ -30,5 +30,10 @@ export const apiService = {
   async getLogs(urlId: string, limit = 100): Promise<UptimeLog[]> {
     const { data } = await api.get(`/api/monitor/logs/${urlId}?limit=${limit}`)
     return data
+  },
+
+  async getPublicStatus(userId: string): Promise<any[]> {
+    const { data } = await axios.get(`${API_URL}/api/status/${userId}`)
+    return data
   }
 }
