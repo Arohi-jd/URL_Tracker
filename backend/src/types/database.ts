@@ -1,27 +1,18 @@
-export interface Monitor {
+export interface MonitoredUrl {
   id: string
   user_id: string
   url: string
-  name: string
-  interval: number
-  created_at: string
+  interval_minutes: number
+  expected_status: number
   is_active: boolean
+  created_at: string
 }
 
-export interface Check {
+export interface UptimeLog {
   id: string
-  monitor_id: string
-  status: 'up' | 'down'
+  url_id: string
+  status: 'UP' | 'DOWN'
   response_time: number
-  status_code?: number
-  error_message?: string
+  status_code: number
   checked_at: string
-}
-
-export interface Incident {
-  id: string
-  monitor_id: string
-  started_at: string
-  resolved_at?: string
-  status: 'ongoing' | 'resolved'
 }
