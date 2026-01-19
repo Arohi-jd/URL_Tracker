@@ -53,4 +53,28 @@ export class DatabaseService {
     if (error) throw error
     return data as UptimeLog[]
   }
+
+  async getMonitoredUrlWithUser(urlId: string) {
+    const { data, error } = await supabase
+      .from('monitored_urls')
+      .select('*, user_email:user_id')
+      .eq('id', urlId)
+      .single()
+    
+    if (error) throw error
+    return data
+  }
+
+  async getLastLog(urlId: string) {
+    const { data, error } = await supabase
+      .from('uptime_logs')
+      .select('*')
+      .eq('url_id', urlId)
+      .order('checked_at', { ascending: false })
+      .limit(1)
+      .single()
+    
+    if (error && error.code !== 'PGRST116') throw error
+    return data
+  }
 }
