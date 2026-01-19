@@ -3,6 +3,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import dotenv from 'dotenv'
 import { CronService } from './services/monitoring/cron'
+import monitorRoutes from './routes/monitor'
 
 dotenv.config()
 
@@ -15,6 +16,9 @@ app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000'
 }))
 app.use(express.json())
+
+// Routes
+app.use('/api/monitor', monitorRoutes)
 
 // Health check
 app.get('/health', (req, res) => {
