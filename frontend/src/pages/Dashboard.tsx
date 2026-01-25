@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { apiRequest } from '../lib/api';
 import type { MonitorRecord } from '../types';
@@ -103,7 +104,9 @@ export default function Dashboard() {
         {monitors.map(m => (
           <div key={m.id} className="monitor-card">
             <div className="monitor-header">
-              <h3>{m.url}</h3>
+              <h3>
+                <Link to={`/monitor/${m.id}`}>{m.url}</Link>
+              </h3>
               <button className="delete-btn" onClick={() => handleDelete(m.id)}>
                 ✕
               </button>

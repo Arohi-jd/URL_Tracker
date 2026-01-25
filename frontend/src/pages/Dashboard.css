@@ -77,6 +77,15 @@ header button {
   flex: 1;
 }
 
+.monitor-header h3 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.monitor-header h3 a:hover {
+  color: #667eea;
+}
+
 .delete-btn {
   background: #e74c3c;
   color: white;

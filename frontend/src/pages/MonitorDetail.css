@@ -1,0 +1,54 @@
+.monitor-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.back-link {
+  color: #667eea;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.chart-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
+}
+
+.chart-container h3 {
+  margin: 0 0 1rem;
+  color: #333;
+}
+
+.logs-table {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.logs-table h3 {
+  margin: 0 0 1rem;
+  color: #333;
+}
+
+.logs-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.logs-table th {
+  text-align: left;
+  padding: 0.75rem;
+  background: #f9f9f9;
+  border-bottom: 2px solid #ddd;
+}
+
+.logs-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
