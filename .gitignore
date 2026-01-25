@@ -1,0 +1,19 @@
+# Node
+node_modules/
+*.log
+
+# Env
+.env
+.env.*
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# Builds
+build/
+dist/
+.cache/
+.next/
+
+# OS
+.DS_Store
