@@ -2,38 +2,66 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100vh;
 }
 
 .back-link {
-  color: #667eea;
+  color: var(--blue-light);
   text-decoration: none;
-  margin-bottom: 1rem;
-  display: inline-block;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.back-link:hover {
+  color: var(--blue-primary);
+  transform: translateX(-4px);
+}
+
+.back-link::before {
+  content: '←';
+  font-size: 1.2rem;
 }
 
 .chart-container {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
   margin-bottom: 2rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  box-shadow: var(--shadow), var(--shadow-glow);
 }
 
 .chart-container h3 {
-  margin: 0 0 1rem;
-  color: #333;
+  margin: 0 0 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .logs-table {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
 }
 
 .logs-table h3 {
-  margin: 0 0 1rem;
-  color: #333;
+  margin: 0 0 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .logs-table table {
@@ -43,12 +71,26 @@
 
 .logs-table th {
   text-align: left;
-  padding: 0.75rem;
-  background: #f9f9f9;
-  border-bottom: 2px solid #ddd;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  color: var(--blue-light);
+  font-weight: 600;
+  border-bottom: 2px solid var(--blue-primary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
 .logs-table td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #eee;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.logs-table tr:hover {
+  background: var(--bg-hover);
+}
+
+.logs-table tr:last-child td {
+  border-bottom: none;
 }

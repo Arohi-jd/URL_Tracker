@@ -72,7 +72,7 @@ export default function MonitorDetail() {
 
   return (
     <div className="monitor-detail">
-      <Link to="/" className="back-link">← Back to Dashboard</Link>
+      <Link to="/" className="back-link">Back to Dashboard</Link>
       {monitor && <h2>{monitor.url}</h2>}
       {loading && <p>Loading...</p>}
       {!loading && logs.length === 0 && <p>No status logs yet.</p>}
